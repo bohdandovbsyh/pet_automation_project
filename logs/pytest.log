@@ -1,0 +1,10 @@
+2022-05-12 00:21:38 [    INFO] 
+ (logger.py:27)
+2022-05-12 00:21:38 [    INFO] ====== WebDriver manager ====== (logger.py:27)
+2022-05-12 00:21:39 [    INFO] Current google-chrome version is 101.0.4951 (logger.py:27)
+2022-05-12 00:21:39 [    INFO] Get LATEST chromedriver version for 101.0.4951 google-chrome (logger.py:27)
+2022-05-12 00:21:39 [    INFO] Driver [C:\Users\b\.wdm\drivers\chromedriver\win32\101.0.4951.41\chromedriver.exe] found in cache (logger.py:27)
+2022-05-12 00:21:43 [    INFO] Set email to admin@yourstore.com (login_page.py:18)
+2022-05-12 00:21:43 [    INFO] Set password to admin (login_page.py:22)
+2022-05-12 00:21:46 [    INFO] Click login button (login_page.py:26)
+2022-05-12 00:21:46 [    INFO] Login to app (login_page.py:36)

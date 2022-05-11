@@ -1,0 +1,3 @@
+2022-05-12 00:14:35,230:C:\Users\b\PycharmProjects\pet_automation_project\utilities\api_collections\base_api.py:get:22:----------GET API----------
+2022-05-12 00:14:36,109:C:\Users\b\PycharmProjects\pet_automation_project\utilities\api_collections\base_api.py:get:26:RESPONSE 200
+response text: {"OK":"GET"}
