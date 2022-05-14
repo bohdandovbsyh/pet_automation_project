@@ -1,10 +1,8 @@
-import inspect
-
 import requests
 
 from utilities.decorators import auto_steps
-from utilities.read_run_settings import ReadConfig
 from utilities.project_logger import logger, set_logger
+from utilities.read_run_settings import ReadConfig
 
 
 @auto_steps

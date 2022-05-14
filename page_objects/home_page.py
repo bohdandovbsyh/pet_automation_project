@@ -18,5 +18,5 @@ class HomePage(BasePage):
 
     # @allure.step
     # def get_navigation_menu(self):
-    #     return NavigationMenu(self.driver)
+    #     return NavigationMenu()
     #
