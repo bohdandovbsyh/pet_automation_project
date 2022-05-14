@@ -4,7 +4,6 @@ import time
 def wait_until(predicate, message_on_fail=None, timeout=10, poll_frequency=0):
     start = time.time()
     while True:
-        c = 0
         try:
             return_val = predicate()
             if return_val:
