@@ -8,7 +8,7 @@ from utilities.read_run_settings import ReadConfig
 
 @pytest.fixture()
 def driver_wrapper_setup():
-    DriverWrapper.create_driver(ReadConfig.get_browser())
+    DriverWrapper.create_driver(ReadConfig.get_browser(), ReadConfig.get_browser_mod())
     DriverWrapper.get_driver().maximize_window()
     set_logger()
     yield

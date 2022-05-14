@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.utils import ChromeType
+from selenium.webdriver.chrome.options import Options
 
 """
 CLASS FOR MANAGING WEB_DRIVER
@@ -19,17 +20,21 @@ class DriverWrapper:
     __DRIVER_MAP = {}
 
     @staticmethod
-    def create_driver(driver_id):
+    def create_driver(driver_id, headless=True):
         """
         Create driver func
         :param driver_id: int, get driver id from this class
+        :param headless : bool, True if run in headless mod
         :return: WebDriver instance
         """
         thread_obj = threading.currentThread()
 
         def get_driver():
             if DriverWrapper.CHROME == driver_id:
-                driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+                chrome_options = Options()
+                if headless:
+                    chrome_options.add_argument("--headless")
+                driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
             elif DriverWrapper.FIRE_FOX == driver_id:
                 driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
             elif DriverWrapper.CHROMIUM == driver_id:

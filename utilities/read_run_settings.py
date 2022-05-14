@@ -23,7 +23,14 @@ class ReadConfig:
 
     @staticmethod
     def get_browser():
-        return config.get('browser', 'browser_id')
+        return int(config.get('browser', 'browser_id'))
+
+    @staticmethod
+    def get_browser_mod():
+        if config.get('browser', 'headless') in ['False', 0, 'false']:
+            return False
+        else:
+            return True
 
     @staticmethod
     def get_logging_level():
