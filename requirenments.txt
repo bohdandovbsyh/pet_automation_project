@@ -9,4 +9,5 @@ Pillow == 9.1.0
 pymongo == 4.1.1
 mysql-connector-python == 8.0.29
 protobuf == 3.20.1
+cryptocode == 0.1
 

@@ -1,5 +1,6 @@
 import configparser
 import os
+import cryptocode
 
 abs_path = os.path.abspath(r"..\..\configurations\run_settings.ini")
 config = configparser.RawConfigParser()
@@ -17,7 +18,8 @@ class ReadConfig:
 
     @staticmethod
     def get_password():
-        return config.get('app_info', 'password')
+        decoded = cryptocode.decrypt(config.get('app_info', 'password'), "mypassword")
+        return decoded
 
     @staticmethod
     def get_browser():
