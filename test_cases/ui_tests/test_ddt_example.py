@@ -2,18 +2,17 @@ import pytest
 import allure
 
 from utilities.assertions import Assertions
-from utilities.project_logger import create_logger
+from utilities.project_logger import logger
 from utilities.xls_parser import *
 
 
 class TestDDTLogin:
-    logger = create_logger()
     test_data_path = r'../../test_data/login_data.xlsx'
 
     @pytest.mark.regression
     @allure.feature("TEST DDT")
     def test_login_ddt(self, open_login_page):
-        self.logger.info(f"{'*' * 10}{self.test_login_ddt.__name__} START {'*' * 10}")
+        logger.info(f"{'*' * 10}{self.test_login_ddt.__name__} START {'*' * 10}")
         login_page = open_login_page
         assertion = Assertions()
 
@@ -45,4 +44,4 @@ class TestDDTLogin:
             assertion.assert_with_screenshot(actual=result, expected=self.exp,
                                              message=f"\ntitle is incorrect\nActual: {result}\nExpected: {self.exp}")
 
-        self.logger.info(f"{'*' * 10}{self.test_login_ddt.__name__} FINISHED {'*' * 10}")
+        logger.info(f"{'*' * 10}{self.test_login_ddt.__name__} FINISHED {'*' * 10}")

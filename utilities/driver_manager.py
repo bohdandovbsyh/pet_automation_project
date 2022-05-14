@@ -5,6 +5,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.utils import ChromeType
+
 """
 CLASS FOR MANAGING WEB_DRIVER
 """
@@ -75,3 +76,13 @@ class DriverWrapper:
     @staticmethod
     def back():
         DriverWrapper.get_driver().back()
+
+    @staticmethod
+    def create_remote_driver(_url, capabilities):
+        thread_obj = threading.currentThread()
+
+        def get_driver(_url, capabilities):
+            return webdriver.Remote(_url, capabilities)
+
+        DriverWrapper.__map(thread_obj, get_driver(_url, capabilities))
+        return DriverWrapper.get_driver()

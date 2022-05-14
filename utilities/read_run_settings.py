@@ -30,3 +30,7 @@ class ReadConfig:
     @staticmethod
     def get_api_base_url():
         return config.get('api_data', 'base_url')
+
+    @staticmethod
+    def get_souse_labs_configuration():
+        return dict(config.items('souse_labs'))
