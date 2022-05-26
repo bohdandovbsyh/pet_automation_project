@@ -1,4 +1,0 @@
-2022-05-12 00:21:43,589:C:\Users\b\PycharmProjects\pet_automation_project\page_objects\login_page.py:set_user_name:18:Set email to admin@yourstore.com
-2022-05-12 00:21:43,699:C:\Users\b\PycharmProjects\pet_automation_project\page_objects\login_page.py:set_password:22:Set password to admin
-2022-05-12 00:21:46,653:C:\Users\b\PycharmProjects\pet_automation_project\page_objects\login_page.py:click_login:26:Click login button
-2022-05-12 00:21:46,654:C:\Users\b\PycharmProjects\pet_automation_project\page_objects\login_page.py:login_to_app:36:Login to app

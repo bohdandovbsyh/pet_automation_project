@@ -4,13 +4,8 @@ import allure
 
 
 def auto_steps(cls):
-    """
-    Decorator to automatically add allure.step decorator to all methods inside class
-    Args:
-        cls: Class
-    """
-    for name, method in inspect.getmembers(cls):
-        if (not inspect.isfunction(method)) or inspect.isbuiltin(method) and method.name.startswith("__"):
+    for fn_name, funk in inspect.getmembers(cls):
+        if (not inspect.isfunction(funk)) or inspect.isbuiltin(funk) and funk.name.startswith("__"):
             continue
-        setattr(cls, name, allure.step(method))
+        setattr(cls, fn_name, allure.step(funk))
     return cls
