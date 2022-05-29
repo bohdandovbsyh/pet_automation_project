@@ -16,3 +16,10 @@ _________________________________________________________
 * you can change doxygen_config file
 * run in terminal doxygen:
      > doxygen doxygen_config
+__________________________________________________________
+
+# Jmeter how to
+
+* Copy reportgenerator.properties and overwrite this file in your jmeter bin folder to have configured html report 
+* Run command to generate HTML report:
+    > jmeter -n -t "example_project.jmx" -l "result_file.csv" -e -o "report_folder"
