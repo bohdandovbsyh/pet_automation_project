@@ -2,7 +2,9 @@ import configparser
 import os
 import cryptocode
 
-abs_path = os.path.abspath(r"..\..\configurations\run_settings.ini")
+from CONSTS import ROOT_DIR
+
+abs_path = os.path.abspath(fr"{ROOT_DIR}/configurations/run_settings.ini")
 config = configparser.RawConfigParser()
 config.read(abs_path)
 

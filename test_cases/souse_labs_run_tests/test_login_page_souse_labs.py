@@ -6,7 +6,7 @@ from utilities.assertions import Assertions
 class TestLoginPageSouseLabsExample:
 
     @allure.feature('Login page test')
-    def test_home_page_title_passed(self, open_login_page_virtual):
+    def _test_home_page_title_passed(self, open_login_page_virtual):
         """
         ** Test Description **: test verifies title of login page on SouseLabsEnv
 
@@ -26,7 +26,7 @@ class TestLoginPageSouseLabsExample:
                                          message=f"\ntitle is incorrect\nActual: {title}\nExpected: Your store. Login")
 
     @allure.feature('Login page test')
-    def test_home_page_title_faied(self, open_login_page_virtual):
+    def _test_home_page_title_faied(self, open_login_page_virtual):
         """
         ** Test Description **: test verifies title of login page on SouseLabsEnv
 

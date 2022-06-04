@@ -1,2 +1,2 @@
-class NavigationMenu():
+class NavigationMenu:
     pass
