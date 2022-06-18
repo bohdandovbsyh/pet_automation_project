@@ -1,17 +1,33 @@
+from contextlib import suppress
+
 import pytest
 
 from page_objects.login_page import LoginPage
 from utilities.driver_manager import DriverWrapper
 from utilities.project_logger import set_logger
 from utilities.read_run_settings import ReadConfig
+import allure
+
+
+@pytest.hookimpl(hookwrapper=True, tryfirst=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    setattr(item, "rep_" + rep.when, rep)
+    return rep
 
 
 @pytest.fixture()
-def driver_wrapper_setup():
-    DriverWrapper.create_driver(ReadConfig.get_browser(), ReadConfig.get_browser_mod())
+def driver_wrapper_setup(request):
+    DriverWrapper.create_driver(1, False)
     DriverWrapper.get_driver().maximize_window()
     set_logger()
     yield
+    if request.node.rep_call.failed:
+        with suppress(Exception):
+            allure.attach(DriverWrapper.get_driver().get_screenshot_as_png(),
+                          name=request.function.__name__,
+                          attachment_type=allure.attachment_type.PNG)
     DriverWrapper.shutdown()
 
 

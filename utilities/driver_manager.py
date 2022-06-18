@@ -16,6 +16,7 @@ class DriverWrapper:
     CHROME = 1
     FIRE_FOX = 2
     CHROMIUM = 3
+    REMOTE = 4
 
     __DRIVER_MAP = {}
 
@@ -40,6 +41,16 @@ class DriverWrapper:
             elif DriverWrapper.CHROMIUM == driver_id:
                 driver = webdriver.Chrome(
                     service=Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install()))
+            elif DriverWrapper.REMOTE == driver_id:
+                chrome_options = webdriver.ChromeOptions()
+                if headless:
+                    chrome_options.add_argument("--headless")
+                    chrome_options.add_argument('--ignore-ssl-errors=yes')
+                    chrome_options.add_argument('--ignore-certificate-errors')
+                driver = webdriver.Remote(
+                    command_executor='http://admin-demo.nopcommerce.com',
+                    options=chrome_options
+                )
             else:
                 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
             return driver

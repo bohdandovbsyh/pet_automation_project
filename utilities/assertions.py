@@ -2,6 +2,7 @@ import inspect
 import allure
 
 from utilities.driver_manager import DriverWrapper
+from allure_commons.types import AttachmentType
 
 
 class Assertions:
@@ -10,5 +11,6 @@ class Assertions:
 
     @allure.step
     def assert_with_screenshot(self, actual, expected, message):
-        self.driver.save_screenshot(f".\\screenshots\\{inspect.stack()[1][3]}.png")
+        allure.attach(self.driver.get_screenshot_as_png(), name=f"{inspect.stack()[1][3]}",
+                      attachment_type=AttachmentType.PNG)
         assert actual == expected, message
