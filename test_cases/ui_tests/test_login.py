@@ -20,7 +20,7 @@ def test_home_page_title(open_login_page):
     """
     login_page = open_login_page
     title = login_page.get_title()
-    assert title == "Your store. Login!!!"
+    assert title == "Your store. Login"
     # assertion.assert_with_screenshot(actual=title, expected="Your store. Login",
     #                                  message=f"\ntitle is incorrect\nActual: {title}\nExpected: Your store. Login")
 
