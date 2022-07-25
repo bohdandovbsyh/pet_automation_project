@@ -11,7 +11,7 @@ class TestDDTLogin:
 
     @pytest.mark.regression
     @allure.feature("TEST DDT")
-    def test_login_ddt(self, open_login_page):
+    def _test_login_ddt(self, open_login_page):
         logger.info(f"{'*' * 10}{self.test_login_ddt.__name__} START {'*' * 10}")
         login_page = open_login_page
         assertion = Assertions()
