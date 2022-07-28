@@ -19,7 +19,7 @@ def pytest_runtest_makereport(item, call):
 
 @pytest.fixture()
 def driver_wrapper_setup(request):
-    DriverWrapper.create_driver(1, True)
+    DriverWrapper.create_driver(1, False)
     DriverWrapper.get_driver().maximize_window()
     set_logger()
     yield
