@@ -1,4 +1,5 @@
 import allure
+import pytest
 
 from utilities.assertions import Assertions
 from utilities.read_run_settings import ReadConfig
@@ -6,6 +7,7 @@ from utilities.waiters import wait_until
 
 
 @allure.feature('Login page test')
+@pytest.mark.test
 def test_home_page_title(open_login_page):
     """
     ** Test Description **: test verifies title of login page
