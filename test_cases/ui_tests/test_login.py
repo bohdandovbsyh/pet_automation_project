@@ -28,6 +28,7 @@ def test_home_page_title(open_login_page):
 
 
 @allure.feature('Login page test')
+@pytest.mark.regression
 def test_login(open_login_page):
     """
         ** Test Description **: test verifies thar user can login to application
